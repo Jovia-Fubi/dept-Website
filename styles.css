@@ -1434,6 +1434,21 @@ footer {
 
 /* Enhanced Mobile Responsive Design - Clean & Simple */
 @media (max-width: 768px) {
+    /* Mobile menu toggle */
+    .mobile-menu-toggle {
+        display: block;
+        order: 2;
+    }
+
+    /* Hide nav by default on mobile */
+    .header-nav .nav-list {
+        display: none;
+    }
+
+    .header-nav.nav-open .nav-list {
+        display: flex;
+    }
+
     /* Simple mobile navigation */
     .header-content {
         flex-direction: column;

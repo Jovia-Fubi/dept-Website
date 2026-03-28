@@ -8,6 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeScrollEffects();
     initializeSlideshow();
     initializeThemeToggle();
+    initializeMobileMenu();
 });
 
 // Initialize all button interactions
@@ -744,6 +745,45 @@ return 'dark';
 return 'light';
 }
 
+// Initialize mobile menu toggle
+function initializeMobileMenu() {
+    const toggle = document.getElementById('mobileMenuToggle');
+    const nav = document.querySelector('.header-nav');
+    const navList = document.getElementById('navList');
+
+    if (toggle && nav) {
+        toggle.addEventListener('click', function() {
+            nav.classList.toggle('nav-open');
+            // Change icon
+            const icon = toggle.querySelector('i');
+            if (nav.classList.contains('nav-open')) {
+                icon.className = 'fas fa-times';
+            } else {
+                icon.className = 'fas fa-bars';
+            }
+        });
+
+        // Close menu when clicking outside or on a link
+        document.addEventListener('click', function(e) {
+            if (!nav.contains(e.target) && !toggle.contains(e.target)) {
+                nav.classList.remove('nav-open');
+                const icon = toggle.querySelector('i');
+                icon.className = 'fas fa-bars';
+            }
+        });
+
+        // Close menu when clicking on a nav link
+        if (navList) {
+            navList.addEventListener('click', function(e) {
+                if (e.target.tagName === 'A') {
+                    nav.classList.remove('nav-open');
+                    const icon = toggle.querySelector('i');
+                    icon.className = 'fas fa-bars';
+                }
+            });
+        }
+    }
+}
 
 // Make theme functions globally accessible
 window.ThemeUtils = {
