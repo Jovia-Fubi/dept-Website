@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Timetable - Bugema University</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+        <i class="fas fa-moon icon" id="themeIcon"></i>
+    </button>
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="IMG/bugema_logo.png" alt="Bugema University Logo" class="logo">
+                <div class="header-text">
+                    <h1>Bugema University</h1>
+                    <p>Department of Computing and Informatics</p>
+                </div>
+            </div>
+            <div class="header-nav">
+                <ul class="nav-list">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li class="dropdown">
+                        <a href="departments.html">Academic</a>
+                        <div class="dropdown-content">
+                            <a href="departments.html">Schools & Departments</a>
+                            <a href="programs.html">Programs</a>
+                            <a href="admissions.html">Admissions</a>
+                            <a href="timetable.html">Timetable</a>
+                        </div>
+                    </li>
+                    <li class="dropdown">
+                        <a href="research.html">Research</a>
+                        <div class="dropdown-content">
+                            <a href="research.html">Research Overview</a>
+                            <a href="faculty-achievements.html">Faculty Achievements</a>
+                            <a href="publications.html">Publications</a>
+                        </div>
+                    </li>
+                    <li><a href="staff.html">Staff</a></li>
+                    <li><a href="news.html">News & Events</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                    <li class="dropdown">
+                        <a href="student-portal.html">Student Portal</a>
+                        <div class="dropdown-content">
+                            <a href="student-portal.html">Student Portal</a>
+                            <a href="course-registration.html">Course Registration</a>
+                            <a href="downloadable-forms.html">Forms</a>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <div class="container">
+            <!-- Page Header -->
+            <section class="section fade-in">
+                <div class="text-center">
+                    <h2>Department Timetable</h2>
+                    <p class="mt-2">View class schedules, exam timetables, and department events for the current academic semester.</p>
+                </div>
+            </section>
+
+            <!-- Semester Selection -->
+            <section class="section fade-in">
+                <div class="card">
+                    <h3>📅 Select Academic Period</h3>
+                    <div class="grid grid-3">
+                        <div class="form-group">
+                            <label for="semester">Semester</label>
+                            <select id="semester" name="semester">
+                                <option value="aug2026">August - December 2026</option>
+                                <option value="jan2027">January - May 2027</option>
+                                <option value="jun2027">May - August 2027</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="department">Department</label>
+                            <select id="department" name="department">
+                                <option value="all">All Departments</option>
+                                <option value="se">Software Engineering</option>
+                                <option value="it">Information Technology</option>
+                                <option value="se2">Software Engineering (2nd)</option>
+                                <option value="na">Network and Administration</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="year">Year Level</label>
+                            <select id="year" name="year">
+                                <option value="all">All Years</option>
+                                <option value="1">Year 1</option>
+                                <option value="2">Year 2</option>
+                                <option value="3">Year 3</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="text-center mt-2">
+                        <button class="btn" onclick="updateTimetable()">Update Timetable</button>
+                        <button class="btn btn-secondary" onclick="downloadTimetable()">Download PDF</button>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Class Timetable -->
+            <section class="section fade-in">
+                <h2>📚 Class Schedule</h2>
+                <div class="card">
+                    <div class="timetable-container">
+                        <table class="timetable">
+                            <thead>
+                                <tr>
+                                    <th>Time</th>
+                                    <th>Monday</th>
+                                    <th>Tuesday</th>
+                                    <th>Wednesday</th>
+                                    <th>Thursday</th>
+                                    <th>Friday</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="time-slot">11:00-1:00 AM</td>
+                                    <td class="course-cell">
+                                        <div class="course-info">
+                                            <strong>CSC 201</strong><br>
+                                            Data Structures & Algorithms<br>
+                                             <small>Assoc.Prof.SSALI Robert Balagadde| Lab 2</small>
+                                        </div>
+                                    </td>
+                                    <td class="course-cell">
+                                        <div class="course-info">
+                                            <strong>SE 301</strong><br>
+                                            Computer  Architecture<br>
+                                            <small>Albert Walusimbi  | Lab 3</small>
+                                        </div>
+                                    </td>
+                                    <td class="course-cell">
+                                        <div class="course-info">
+                                            <strong>CSC 201</strong><br>
+                                            Python programming<br>
+                                             <small>Assoc.Prof.SSALI Robert Balagadde| Lab 2</small>
+                                        </div>
+                                    </td>
+                                    <td class="course-cell">
+                                        <div class="course-info">
+                                            <strong>BNCT 2217</strong><br>
+                                            Network and information Security<br>
+                                            <small>Albert Walusimbi | Lab 3</small>
+                                        </div>
+                                    </td>
+                                    <td class="course-cell">
+                                        <div class="course-info">
+                                            <strong>BNCT 2200</strong><br>
+                                           Wireless Networks<br>
+                                            <small>Kwemoi Lordfick </small>
+                                        </div>
+                                    </td>
+
+                                </tr>
+                                <tr>
+                                    <td class="time-slot">10:00 AM-12:00 PM</td>
+                                    <td class="course-cell">
+                                        <div class="course-info">
+                                            <strong>MAT 201</strong><br>
+                                            NoSql database<br>
+                                            <small>David Kitumba | lab 3</small>
+                                        </div>
+                                    </td>
+                                    <td class="course-cell">
+                                        <div class="course-info">
+                                            <strong>IT 302</strong><br>
+                                            Cloud Computing<br>
+                                            <small> David Kitumba | Lab 2</small>
+                                        </div>
+                                    </td>
+                                    <td class="course-cell">
+                                        <div class="course-info">
+                                            <strong>MAT 201</strong><br>
+                                            Linear Algebra<br>
+                                            <small>Prof. Okello | Room 205</small>
+                                        </div>
+                                    </td>
+                                    <td class="course-cell">
+                                        <div class="course-info">
+                                            <strong>IT 302</strong><br>
+                                            Cloud Computing<br>
+                                            <small>Dr. Lumumba | Lab 302</small>
+                                        </div>
+                                    </td>
+                                    <td class="course-cell">
+                                        <div class="course-info">
+                                            <strong>NA 301</strong><br>
+                                            Network Design<br>
+                                            <small>Albert Walusimbi</small>
+                                        </div>
+                                    </td>
+                                    <td class="weekend-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-slot">2:00-4:00 PM</td>
+                                    <td class="course-cell">
+                                        <div class="course-info">
+                                            <strong>CSC 301</strong><br>
+                                            Artificial Intelligence<br>
+                                            <small>Assoc.Prof.SSALI Robert Balagadde| Lab 2</small>
+                                        </div>
+                                    </td>
+                                    <td class="weekend-cell"></td>
+                                    <td class="course-cell">
+                                        <div class="course-info">
+                                            <strong>CSC 301</strong><br>
+                                            Artificial Intelligence<br>
+                                            <small>Assoc.Prof.SSALI Robert Balagadde| Lab 2</small>
+                                        </div>
+                                    </td>
+                                    <td class="course-cell">
+                                        <div class="course-info">
+                                            <strong>SE 303</strong><br>
+                                            IoT<br>
+                                            <small>Dr. Mwangi | Lab 301</small>
+                                        </div>
+                                    </td>
+                                    <td class="course-cell">
+                                        <div class="course-info">
+                                            <strong>SE 303</strong><br>
+                                            System Analysis<br>
+                                            <small>Madam Nantege Helen | Lab 301</small>
+                                        </div>
+                                    </td>
+                                    <td class="weekend-cell"></td>
+                                </tr>
+                                <tr>
+                                    <td class="time-slot">4:00-6:00 PM</td>
+                                    <td class="course-cell">
+                                        <div class="course-info">
+                                            <strong>COM 201</strong><br>
+                                            System Analysis<br>
+                                            <small>Nantege Hellen</small>
+                                        </div>
+                                    <td class="course-cell"></td>
+                                    <td class="course-cell">
+                                        <div class="course-info">
+                                            <strong>ENT 301</strong><br>
+                                            Entrepreneurship<br>
+                                            <small>Guest Speaker | Hall A</small>
+                                        </div>
+                                    </td>
+                                    <td class="weekend-cell"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </section>
+
+           
+            <!-- Department Events -->
+            <section class="section fade-in">
+                <h2>🎯 Department Events</h2>
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3>Upcoming Events</h3>
+                        <div class="event-item">
+                            <div class="event-date">April 25, 2026</div>
+                            <div class="event-details">
+                                <h4>AI Workshop</h4>
+                                <p>Introduction to Machine Learning with Dr. Balagade</p>
+                                <p><strong>Time:</strong> 2:00 PM - 5:00 PM</p>
+                                <p><strong>Venue:</strong> Lab 2</p>
+                            </div>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-date">April 2, 2026</div>
+                            <div class="event-details">
+                                <h4>Hackathon 2026</h4>
+                                <p>24-hour coding competition for all students</p>
+                                <p><strong>Time:</strong> 10:00 AM - April 3, 10:00 AM</p>
+                                <p><strong>Venue:</strong> Computing Labs</p>
+                            </div>
+                        </div>
+                        <div class="event-item">
+                            <div class="event-date">May 16, 2026</div>
+                            <div class="event-details">
+                                <h4>Industry Talk</h4>
+                                <p>Career opportunities in Software Engineering</p>
+                                <p><strong>Time:</strong> 3:00 PM - 4:30 PM</p>
+                                <p><strong>Venue:</strong> Main Hall</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="card">
+                        <h3>Important Dates</h3>
+                        <div class="important-dates">
+                            <div class="date-item">
+                                <span class="date-badge">May 10</span>
+                                <span>Mid-semester exams begin</span>
+                            </div>
+                            <div class="date-item">
+                                <span class="date-badge">May 15</span>
+                                <span>Graduation ceremony</span>
+                            </div>
+                            <div class="date-item">
+                                <span class="date-badge">Dec 10</span>
+                                <span>Final semester exams begin</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Quick Links -->
+            <section class="section fade-in">
+                <h2>🔗 Quick Links</h2>
+                <div class="grid grid-3">
+                    <div class="card">
+                        <h3>📚 Academic Resources</h3>
+                        <ul>
+                            <li><a href="#">Course Materials</a></li>
+                            <li><a href="#">Assignment Deadlines</a></li>
+                            <li><a href="#">Academic Calendar</a></li>
+                            <li><a href="#">Study Guides</a></li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>📝 Forms & Requests</h3>
+                        <ul>
+                            <li><a href="#">Course Change Request</a></li>
+                            <li><a href="#">Exam Reschedule Form</a></li>
+                            <li><a href="#">Leave Application</a></li>
+                            <li><a href="#">Transcript Request</a></li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>📞 Support</h3>
+                        <ul>
+                            <li><a href="#">Academic Advisor</a></li>
+                            <li><a href="#">Technical Support</a></li>
+                            <li><a href="#">Student Services</a></li>
+                            <li><a href="#">Emergency Contacts</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <p>Email: bugemauniv@gmail.com</p>
+                    <p>Phone: +256 765 724 432</p>
+                    <p>Location: Main Campus,Department of Computing And Informatics</p>
+                </div>
+                <div class="footer-section">
+                    <h3>Quick Links</h3>
+                    <p><a href="about.html">About Us</a></p>
+                    <p><a href="programs.html">Programs</a></p>
+                    <p><a href="admissions.html">Admissions</a></p>
+                    <p><a href="research.html">Research</a></p>
+                </div>
+                <div class="footer-section">
+                    <h3>Resources</h3>
+                    <p><a href="timetable.html">Department Timetable</a></p>
+                    <p><a href="student-portal.html">Student Portal</a></p>
+                    <p><a href="downloadable-forms.html">Downloadable Forms</a></p>
+                    <p><a href="faculty-achievements.html">Faculty Achievements</a></p>
+                </div>
+            </div>
+            <hr style="border-color: #34495e; margin: 2rem 0;">
+            <p>&copy; 2026 Bugema University - Department of Computing and Informatics. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(el);
+        });
+
+        // Update timetable function
+        function updateTimetable() {
+            const semester = document.getElementById('semester').value;
+            const department = document.getElementById('department').value;
+            const year = document.getElementById('year').value;
+            
+            // Show loading state
+            const timetableContainer = document.querySelector('.timetable-container');
+            timetableContainer.innerHTML = '<div class="text-center" style="padding: 2rem;"><p>Loading timetable...</p></div>';
+            
+            // Simulate loading (in real implementation, this would fetch from server)
+            setTimeout(() => {
+                location.reload(); // For demo purposes, reload the page
+            }, 1000);
+        }
+
+        // Download timetable function
+        function downloadTimetable() {
+            const semester = document.getElementById('semester').value;
+            const department = document.getElementById('department').value;
+            const year = document.getElementById('year').value;
+            
+            // Create a simple text representation for download
+            const timetableText = `
+Department Timetable - Bugema University
+Semester: ${semester}
+Department: ${department}
+Year: ${year}
+
+Generated on: ${new Date().toLocaleDateString()}
+
+This is a downloadable version of the timetable.
+For the latest updates, please visit the website.
+            `;
+            
+            const blob = new Blob([timetableText], { type: 'text/plain' });
+            const url = window.URL.createObjectURL(blob);
+            const a = document.createElement('a');
+            a.href = url;
+            a.download = `timetable_${semester}_${department}_${year}.txt`;
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            window.URL.revokeObjectURL(url);
+        }
+    </script>
+</body>
+</html>

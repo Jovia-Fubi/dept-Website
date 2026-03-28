@@ -1,0 +1,700 @@
+/* ========================================
+   COMPREHENSIVE MOBILE RESPONSIVE DESIGN
+   ======================================== */
+
+/* Mobile First Approach - Base Styles */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    line-height: 1.6;
+    color: #333;
+    overflow-x: hidden;
+}
+
+/* Container Responsive Design */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+}
+
+/* Header Responsive Design */
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 2rem;
+    width: 100%;
+    transition: all 0.3s ease;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+.logo {
+    width: 60px;
+    height: 60px;
+    transition: all 0.3s ease;
+}
+
+.header-text h1 {
+    font-size: 2.8rem;
+    margin: 0;
+    background: linear-gradient(45deg, #ffffff, #e3f2fd);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    transition: all 0.3s ease;
+}
+
+.header-text p {
+    margin: 0;
+    opacity: 0.9;
+    font-size: 1.5rem;
+    color: #e2e8f0;
+    transition: all 0.3s ease;
+}
+
+.header-nav {
+    display: flex;
+    align-items: center;
+}
+
+.header-nav .nav-list {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    gap: 2rem;
+}
+
+.header-nav .nav-list li {
+    position: relative;
+    margin: 0;
+}
+
+.header-nav .nav-list a {
+    display: block;
+    color: white;
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    font-weight: 500;
+    font-size: 0.95rem;
+    transition: all 0.3s ease;
+    border: none;
+    background: transparent;
+    border-radius: 4px;
+}
+
+.header-nav .nav-list a:hover {
+    color: #60a5fa;
+    text-decoration: underline;
+    background: rgba(255, 255, 255, 0.1);
+}
+
+/* Dropdown Responsive Design */
+.header-nav .dropdown-content {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background: #1a365d;
+    min-width: 200px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    border: 1px solid #0f172a;
+    z-index: 1000;
+    border-radius: 4px;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-10px);
+    transition: all 0.3s ease;
+}
+
+.header-nav .dropdown:hover .dropdown-content {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+
+.header-nav .dropdown-content a {
+    display: block;
+    padding: 0.75rem 1rem;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    border-bottom: 1px solid #0f172a;
+    font-size: 0.9rem;
+}
+
+.header-nav .dropdown-content a:hover {
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+}
+
+/* Hero Section Responsive Design */
+.hero-section-makerere {
+    background: linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), url('IMG/IMG-20260322-WA0003.jpg') center/cover;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    padding: 0;
+    text-align: center;
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 2rem;
+}
+
+/* Grid System Responsive */
+.grid {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 2rem;
+}
+
+.grid-2 {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.grid-3 {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+/* Card Responsive Design */
+.card {
+    background: #ffffff;
+    border: 1px solid #e5e7eb;
+    border-radius: 8px;
+    padding: 2rem;
+    margin-bottom: 2rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Typography Responsive Design */
+h1, h2, h3, h4, h5, h6 {
+    font-weight: 600;
+    line-height: 1.3;
+    margin-bottom: 1rem;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #1a365d;
+}
+
+h2 {
+    font-size: 2rem;
+    color: #1a365d;
+}
+
+h3 {
+    font-size: 1.5rem;
+    color: #2563eb;
+}
+
+p {
+    margin-bottom: 1rem;
+    color: #4b5563;
+}
+
+a {
+    color: #2563eb;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #1a365d;
+    text-decoration: underline;
+}
+
+ul, ol {
+    margin-bottom: 1rem;
+    padding-left: 1.5rem;
+}
+
+li {
+    margin-bottom: 0.5rem;
+    color: #4b5563;
+}
+
+/* Button Responsive Design */
+.btn {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background: #2563eb;
+    color: white;
+    text-decoration: none;
+    border-radius: 6px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    font-size: 0.95rem;
+}
+
+.btn:hover {
+    background: #1a365d;
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(26, 54, 93, 0.3);
+}
+
+/* Utility Classes */
+.text-center {
+    text-align: center;
+}
+
+.text-left {
+    text-align: left;
+}
+
+.mt-2 {
+    margin-top: 1rem;
+}
+
+.mb-2 {
+    margin-bottom: 1rem;
+}
+
+.fade-in {
+    opacity: 0;
+    transform: translateY(20px);
+    animation: fadeIn 0.6s ease forwards;
+}
+
+@keyframes fadeIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ========================================
+   TABLET AND BELOW (1200px and below)
+   ======================================== */
+
+@media (max-width: 1200px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    .header-content {
+        padding: 0 1.5rem;
+    }
+    
+    .grid-3 {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    
+    .hero-content {
+        padding: 0 1.5rem;
+    }
+}
+
+/* ========================================
+   SMALL DESKTOP (992px and below)
+   ======================================== */
+
+@media (max-width: 992px) {
+    .container {
+        padding: 0 1.5rem;
+    }
+    
+    .header-content {
+        padding: 0 1.5rem;
+    }
+    
+    .header-nav .nav-list {
+        gap: 1.5rem;
+    }
+    
+    .grid-3 {
+        grid-template-columns: 1fr;
+    }
+    
+    .card {
+        padding: 1.5rem;
+    }
+    
+    .hero-content {
+        padding: 0 1.5rem;
+    }
+}
+
+/* ========================================
+   TABLET (768px and below)
+   ======================================== */
+
+@media (max-width: 768px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+        gap: 1rem;
+        padding: 0 1rem;
+    }
+    
+    .logo {
+        width: 50px;
+        height: 50px;
+    }
+    
+    .header-text h1 {
+        font-size: 1.6rem;
+    }
+    
+    .header-text p {
+        font-size: 1rem;
+    }
+    
+    .header-nav {
+        margin-top: 1rem;
+        width: 100%;
+    }
+    
+    .header-nav .nav-list {
+        flex-direction: column;
+        gap: 0.5rem;
+        text-align: center;
+        background: rgba(26, 54, 93, 0.1);
+        padding: 1rem;
+        border-radius: 8px;
+        margin: 0.5rem 0;
+    }
+    
+    .header-nav .nav-list li {
+        width: 100%;
+    }
+    
+    .header-nav .nav-list a {
+        padding: 1rem 0;
+        text-align: center;
+        display: block;
+        font-size: 1rem;
+    }
+    
+    .header-nav .dropdown {
+        position: static;
+    }
+    
+    .header-nav .dropdown-content {
+        position: static;
+        opacity: 1;
+        visibility: visible;
+        transform: none;
+        box-shadow: none;
+        border: none;
+        background: #0f172a;
+        margin-top: 0.5rem;
+        border-radius: 4px;
+    }
+    
+    .header-nav .dropdown-content a {
+        padding: 0.75rem;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    }
+    
+    .hero-section-makerere {
+        height: 60vh;
+        min-height: 400px;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+    
+    .grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+    
+    .grid-2 {
+        grid-template-columns: 1fr;
+    }
+    
+    .card {
+        padding: 1.5rem;
+        margin-bottom: 1rem;
+    }
+    
+    .section {
+        padding: 2rem 0;
+    }
+    
+    h1 {
+        font-size: 2rem;
+    }
+    
+    h2 {
+        font-size: 1.8rem;
+    }
+    
+    h3 {
+        font-size: 1.4rem;
+    }
+    
+    .btn {
+        padding: 1rem 2rem;
+        font-size: 1rem;
+    }
+}
+
+/* ========================================
+   MOBILE (600px and below)
+   ======================================== */
+
+@media (max-width: 600px) {
+    .header-text h1 {
+        font-size: 1.4rem;
+    }
+    
+    .header-text p {
+        font-size: 0.9rem;
+    }
+    
+    .header-nav .nav-list {
+        gap: 0.3rem;
+        padding: 0.75rem;
+    }
+    
+    .header-nav .nav-list a {
+        font-size: 0.9rem;
+        padding: 0.75rem 0;
+    }
+    
+    .hero-section-makerere {
+        height: 50vh;
+        min-height: 350px;
+    }
+    
+    .container {
+        padding: 0 0.75rem;
+    }
+    
+    .card {
+        padding: 1rem;
+        margin-bottom: 0.75rem;
+    }
+    
+    .section {
+        padding: 1.5rem 0;
+    }
+    
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h2 {
+        font-size: 1.6rem;
+    }
+    
+    h3 {
+        font-size: 1.3rem;
+    }
+    
+    .btn {
+        padding: 0.75rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+
+/* ========================================
+   SMALL MOBILE (480px and below)
+   ======================================== */
+
+@media (max-width: 480px) {
+    .header-content {
+        gap: 0.75rem;
+        padding: 0 0.75rem;
+    }
+    
+    .logo {
+        width: 40px;
+        height: 40px;
+    }
+    
+    .header-text h1 {
+        font-size: 1.2rem;
+    }
+    
+    .header-text p {
+        font-size: 0.8rem;
+    }
+    
+    .header-nav .nav-list {
+        gap: 0.25rem;
+        padding: 0.5rem;
+    }
+    
+    .header-nav .nav-list a {
+        font-size: 0.85rem;
+        padding: 0.5rem 0;
+    }
+    
+    .hero-section-makerere {
+        height: 45vh;
+        min-height: 300px;
+    }
+    
+    .container {
+        padding: 0 0.5rem;
+    }
+    
+    .card {
+        padding: 0.75rem;
+        margin-bottom: 0.5rem;
+    }
+    
+    .section {
+        padding: 1rem 0;
+    }
+    
+    h1 {
+        font-size: 1.6rem;
+    }
+    
+    h2 {
+        font-size: 1.4rem;
+    }
+    
+    h3 {
+        font-size: 1.2rem;
+    }
+    
+    .btn {
+        padding: 0.5rem 1rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* ========================================
+   TOUCH DEVICE OPTIMIZATIONS
+   ======================================== */
+
+@media (hover: none) and (pointer: coarse) {
+    .header-nav .nav-list a {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .btn {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+    
+    .card {
+        margin-bottom: 1rem;
+    }
+}
+
+/* ========================================
+   LANDSCAPE MOBILE OPTIMIZATIONS
+   ======================================== */
+
+@media (max-width: 768px) and (orientation: landscape) {
+    .hero-section-makerere {
+        height: 40vh;
+        min-height: 250px;
+    }
+    
+    .header-content {
+        flex-direction: row;
+        gap: 0.5rem;
+    }
+    
+    .header-nav {
+        margin-top: 0;
+    }
+    
+    .header-nav .nav-list {
+        flex-direction: row;
+        gap: 0.5rem;
+        padding: 0.5rem 1rem;
+        background: rgba(26, 54, 93, 0.1);
+        border-radius: 8px;
+    }
+    
+    .header-nav .nav-list a {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.85rem;
+    }
+}
+
+/* ========================================
+   HIGH DPI DISPLAYS
+   ======================================== */
+
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .logo {
+        image-rendering: -webkit-optimize-contrast;
+        image-rendering: crisp-edges;
+    }
+    
+    .hero-section-makerere {
+        background-attachment: scroll;
+    }
+}
+
+/* ========================================
+   PRINT STYLES
+   ======================================== */
+
+@media print {
+    .header-nav {
+        display: none;
+    }
+    
+    .hero-section-makerere {
+        height: auto;
+        min-height: 200px;
+        background-attachment: scroll;
+    }
+    
+    .container {
+        padding: 0;
+    }
+    
+    .card {
+        box-shadow: none;
+        border: 1px solid #ccc;
+        break-inside: avoid;
+    }
+    
+    .btn {
+        background: #fff !important;
+        color: #000 !important;
+        border: 1px solid #000 !important;
+    }
+}

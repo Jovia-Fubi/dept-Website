@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Course Registration - Bugema University Computing and Informatics</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+</head>
+
+<body>
+    <!-- Theme Toggle Button -->
+    <button class="theme-toggle" id="themeToggle" aria-label="Toggle dark/light mode">
+        <i class="fas fa-moon icon" id="themeIcon"></i>
+    </button>
+
+    <header>
+        <div class="header-content">
+            <div class="logo-container">
+                <img src="IMG/bu.png" alt="Bugema University Logo" class="logo">
+                <div class="header-text">
+                    <h1>Bugema University</h1>
+                    <p>Department of Computing and Informatics</p>
+                </div>
+            </div>
+        </div>
+    </header>
+
+    <nav>
+        <div class="nav-container">
+            <ul class="nav-list">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li class="dropdown">
+                    <a href="departments.html">Academic</a>
+                    <div class="dropdown-content">
+                        <a href="departments.html">Departments</a>
+                        <a href="programs.html">Programs</a>
+                        <a href="admissions.html">Admissions</a>
+                        <a href="timetable.html">Timetable</a>
+                    </div>
+                </li>
+                <li class="dropdown">
+                    <a href="research.html">Research</a>
+                    <div class="dropdown-content">
+                        <a href="research.html">Research</a>
+                        <a href="faculty-achievements.html">Faculty Achievements</a>
+                        <a href="publications.html">Publications</a>
+                    </div>
+                </li>
+                <li><a href="staff.html">Staff</a></li>
+                <li><a href="news.html">News & Events</a></li>
+                <li><a href="contact.html">Contact</a></li>
+                <li class="dropdown">
+                    <a href="student-portal.html">Student Portal</a>
+                    <div class="dropdown-content">
+                        <a href="student-portal.html">Student Portal</a>
+                        <a href="course-registration.html">Course Registration</a>
+                        <a href="downloadable-forms.html">Forms</a>
+                    </div>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <main>
+        <div class="container">
+            <!-- Page Header -->
+            <section class="section fade-in">
+                <div class="text-center">
+                    <h2>Course Registration</h2>
+                    <p class="mt-2">Register for courses for the upcoming academic semester. Please complete all required fields.</p>
+                </div>
+            </section>
+
+            <!-- Registration Form -->
+            <section class="section fade-in">
+                <div class="card">
+                    <form id="courseRegistration">
+                        <!-- Student Information -->
+                        <div class="form-section">
+                            <h3>👤 Student Information</h3>
+                            <div class="grid grid-2">
+                                <div class="form-group">
+                                    <label for="studentId">Student ID *</label>
+                                    <input type="text" id="studentId" name="studentId" required aria-required="true">
+                                </div>
+                                <div class="form-group">
+                                    <label for="studentName">Student Name *</label>
+                                    <input type="text" id="studentName" name="studentName" required aria-required="true" readonly>
+                                </div>
+                                <div class="form-group">
+                                    <label for="program">Program *</label>
+                                    <select id="program" name="program" required aria-required="true">
+                                        <option value="">Select Program</option>
+                                        <option value="bcs">Bachelor of Computer Science</option>
+                                        <option value="bit">Bachelor of Information Technology</option>
+                                        <option value="bse">Bachelor of Software Engineering</option>
+                                        <option value="bds">Bachelor of Data Science</option>
+                                        <option value="mcs">Master of Computer Science</option>
+                                        <option value="mit">Master of Information Technology</option>
+                                        <option value="mds">Master of Data Science</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="yearOfStudy">Year of Study *</label>
+                                    <select id="yearOfStudy" name="yearOfStudy" required aria-required="true">
+                                        <option value="">Select Year</option>
+                                        <option value="1">Year 1</option>
+                                        <option value="2">Year 2</option>
+                                        <option value="3">Year 3</option>
+                                        <option value="4">Year 4</option>
+                                        <option value="m1">Master's Year 1</option>
+                                        <option value="m2">Master's Year 2</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Semester Information -->
+                        <div class="form-section">
+                            <h3>📅 Semester Information</h3>
+                            <div class="grid grid-2">
+                                <div class="form-group">
+                                    <label for="semester">Academic Semester *</label>
+                                    <select id="semester" name="semester" required aria-required="true">
+                                        <option value="">Select Semester</option>
+                                        <option value="aug2026">August 2026 - December 2026</option>
+                                        <option value="jan2027">January 2027 - May 2027</option>
+                                    </select>
+                                </div>
+                                <div class="form-group">
+                                    <label for="maxCredits">Maximum Credits *</label>
+                                    <select id="maxCredits" name="maxCredits" required aria-required="true">
+                                        <option value="">Select Maximum Credits</option>
+                                        <option value="12">12 Credits</option>
+                                        <option value="15">15 Credits</option>
+                                        <option value="18">18 Credits</option>
+                                        <option value="21">21 Credits</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Course Selection -->
+                        <div class="form-section">
+                            <h3>📚 Course Selection</h3>
+                            <div class="course-selection-grid">
+                                <div class="course-item">
+                                    <label>
+                                        <input type="checkbox" name="courses" value="CSC201" class="course-checkbox">
+                                        <span class="course-info">
+                                            <strong>Data Structures & Algorithms (CSC 201)</strong><br>
+                                            <em>4 Credits | Mon/Wed/Fri 8:00-10:00 AM</em><br>
+                                            Prof. Michael Okello | Room 201
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="course-item">
+                                    <label>
+                                        <input type="checkbox" name="courses" value="CSC202" class="course-checkbox">
+                                        <span class="course-info">
+                                            <strong>Database Systems (CSC 202)</strong><br>
+                                            <em>3 Credits | Tue/Thu 10:00 AM-12:00 PM</em><br>
+                                            Dr. Grace Achieng | Room 202
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="course-item">
+                                    <label>
+                                        <input type="checkbox" name="courses" value="CSC203" class="course-checkbox">
+                                        <span class="course-info">
+                                            <strong>Computer Networks (CSC 203)</strong><br>
+                                            <em>3 Credits | Mon/Wed/Fri 2:00-4:00 PM</em><br>
+                                            Dr. Robert Mwangi | Lab 301
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="course-item">
+                                    <label>
+                                        <input type="checkbox" name="courses" value="CSC301" class="course-checkbox">
+                                        <span class="course-info">
+                                            <strong>Artificial Intelligence (CSC 301)</strong><br>
+                                            <em>4 Credits | Tue/Thu 8:00-10:00 AM</em><br>
+                                            Dr. Grace Achieng | Lab 302
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="course-item">
+                                    <label>
+                                        <input type="checkbox" name="courses" value="CSC302" class="course-checkbox">
+                                        <span class="course-info">
+                                            <strong>Software Engineering (CSC 302)</strong><br>
+                                            <em>3 Credits | Mon/Wed/Fri 10:00 AM-12:00 PM</em><br>
+                                            Ms. Susan Nakato | Room 203
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="course-item">
+                                    <label>
+                                        <input type="checkbox" name="courses" value="MAT201" class="course-checkbox">
+                                        <span class="course-info">
+                                            <strong>Linear Algebra (MAT 201)</strong><br>
+                                            <em>3 Credits | Tue/Thu 2:00-4:00 PM</em><br>
+                                            Prof. Michael Okello | Room 205
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Registration Summary -->
+                        <div class="form-section">
+                            <h3>📊 Registration Summary</h3>
+                            <div class="registration-summary">
+                                <div class="summary-item">
+                                    <label>Selected Courses:</label>
+                                    <span id="selectedCount">0</span> courses
+                                </div>
+                                <div class="summary-item">
+                                    <label>Total Credits:</label>
+                                    <span id="totalCredits">0</span> credits
+                                </div>
+                                <div class="summary-item">
+                                    <label>Status:</label>
+                                    <span id="registrationStatus">No courses selected</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Submit Actions -->
+                        <div class="form-section">
+                            <div class="text-center">
+                                <button type="submit" class="btn" id="submitBtn">Submit Registration</button>
+                                <button type="button" class="btn btn-secondary" id="clearBtn">Clear Selection</button>
+                                <button type="button" class="btn btn-secondary" id="saveBtn">Save for Later</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </section>
+
+            <!-- Registration Guidelines -->
+            <section class="section fade-in">
+                <h2>📋 Registration Guidelines</h2>
+                <div class="grid grid-2">
+                    <div class="card">
+                        <h3>Important Dates</h3>
+                        <ul>
+                            <li><strong>Registration Opens:</strong> July 1, 2026</li>
+                            <li><strong>Registration Closes:</strong> August 15, 2026</li>
+                            <li><strong>Late Registration:</strong> August 16-20, 2026 (with penalty)</li>
+                            <li><strong>Add/Drop Period:</strong> August 22-28, 2026</li>
+                            <li><strong>Classes Begin:</strong> August 29, 2026</li>
+                        </ul>
+                    </div>
+                    <div class="card">
+                        <h3>Registration Requirements</h3>
+                        <ul>
+                            <li>Clear all outstanding fees</li>
+                            <li>Meet academic prerequisites for selected courses</li>
+                            <li>Minimum 12 credits for full-time students</li>
+                            <li>Maximum 21 credits per semester</li>
+                            <li>Advisor approval required for overload</li>
+                        </ul>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Contact Support -->
+            <section class="section fade-in">
+                <h2>🆘 Registration Support</h2>
+                <div class="card">
+                    <div class="grid grid-2">
+                        <div>
+                            <h3>Academic Advisors</h3>
+                            <p><strong>Computer Science:</strong> Dr. Grace Achieng</p>
+                            <p>Email: grace.achieng@bugemauniversity.com</p>
+                            <p>Office: Room 202</p>
+                        </div>
+                        <div>
+                            <h3>Registration Office</h3>
+                            <p><strong>Email:</strong> registration@bugemauniversity.com</p>
+                            <p><strong>Phone:</strong> +256 700 000097</p>
+                            <p><strong>Hours:</strong> Monday - Friday, 8:00 AM - 5:00 PM</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Compact Footer -->
+    <footer class="compact-footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h3>Bugema University</h3>
+                <p>Department of Computing and Informatics Since 1948</p>
+            </div>
+            <div class="footer-section">
+                <h3>Quick Links</h3>
+                <ul>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="programs.html">Programs</a></li>
+                    <li><a href="admissions.html">Admissions</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h3>Contact</h3>
+                <p><i class="fas fa-phone"></i> +256 312 351 400</p>
+                <p><i class="fas fa-envelope"></i> info@bugemauniv.ac.ug</p>
+                <p><i class="fas fa-map-marker-alt"></i> Bugema, Luweero, Uganda</p>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Bugema University. All Rights Reserved.</p>
+        </div>
+    </footer>
+
+    <!-- WhatsApp Floating Button -->
+    <div class="whatsapp-float">
+        <a href="https://wa.me/+256769593407" target="_blank" title="Chat with us on WhatsApp">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+    </div>
+
+    <script>
+        // Add fade-in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver(function(entries) {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.fade-in').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(20px)';
+            el.style.transition = 'opacity 0.8s ease, transform 0.8s ease';
+            observer.observe(el);
+        });
+
+        // Course selection functionality
+        const courseCheckboxes = document.querySelectorAll('.course-checkbox');
+        const selectedCount = document.getElementById('selectedCount');
+        const totalCredits = document.getElementById('totalCredits');
+        const registrationStatus = document.getElementById('registrationStatus');
+
+        function updateRegistrationSummary() {
+            const selectedCourses = document.querySelectorAll('.course-checkbox:checked');
+            const count = selectedCourses.length;
+            let credits = 0;
+
+            selectedCourses.forEach(checkbox => {
+                const courseInfo = checkbox.nextElementSibling.querySelector('em').textContent;
+                const creditMatch = courseInfo.match(/(\d+)\s+Credits/);
+                if (creditMatch) {
+                    credits += parseInt(creditMatch[1]);
+                }
+            });
+
+            selectedCount.textContent = count;
+            totalCredits.textContent = credits;
+
+            // Update status
+            if (count === 0) {
+                registrationStatus.textContent = 'No courses selected';
+                registrationStatus.style.color = '#e74c3c';
+            } else if (credits < 12) {
+                registrationStatus.textContent = 'Below minimum credits (12)';
+                registrationStatus.style.color = '#f39c12';
+            } else if (credits > 21) {
+                registrationStatus.textContent = 'Exceeds maximum credits (21)';
+                registrationStatus.style.color = '#e74c3c';
+            } else {
+                registrationStatus.textContent = 'Valid registration';
+                registrationStatus.style.color = '#27ae60';
+            }
+        }
+
+        courseCheckboxes.forEach(checkbox => {
+            checkbox.addEventListener('change', updateRegistrationSummary);
+        });
+
+        // Clear selection
+        document.getElementById('clearBtn').addEventListener('click', function() {
+            courseCheckboxes.forEach(checkbox => {
+                checkbox.checked = false;
+            });
+            updateRegistrationSummary();
+        });
+
+        // Save for later
+        document.getElementById('saveBtn').addEventListener('click', function() {
+            const selectedCourses = [];
+            courseCheckboxes.forEach(checkbox => {
+                if (checkbox.checked) {
+                    selectedCourses.push(checkbox.value);
+                }
+            });
+            
+            if (selectedCourses.length > 0) {
+                localStorage.setItem('savedCourses', JSON.stringify(selectedCourses));
+                alert('Course selection saved! You can complete registration later.');
+            } else {
+                alert('No courses selected to save.');
+            }
+        });
+
+        // Form submission
+        document.getElementById('courseRegistration').addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            const selectedCourses = document.querySelectorAll('.course-checkbox:checked');
+            if (selectedCourses.length === 0) {
+                alert('Please select at least one course.');
+                return;
+            }
+
+            const credits = parseInt(totalCredits.textContent);
+            if (credits < 12) {
+                alert('You must register for at least 12 credits.');
+                return;
+            }
+
+            if (credits > 21) {
+                alert('You cannot register for more than 21 credits.');
+                return;
+            }
+
+            // Show success message
+            const formContainer = document.querySelector('#courseRegistration').parentElement;
+            formContainer.innerHTML = `
+                <div class="text-center" style="padding: 3rem;">
+                    <div style="width: 80px; height: 80px; background: #27ae60; color: white; border-radius: 50%; display: flex; align-items: center; justify-content: center; margin: 0 auto 2rem; font-size: 2rem;">✓</div>
+                    <h2>Registration Submitted Successfully!</h2>
+                    <p>Your course registration has been submitted for processing.</p>
+                    <p><strong>Registration Reference:</strong> BU-CR-${Date.now()}</p>
+                    <p>You will receive a confirmation email within 24 hours.</p>
+                    <div class="mt-3">
+                        <a href="student-portal.html" class="btn">Return to Student Portal</a>
+                        <a href="index.html" class="btn btn-secondary">Return to Home</a>
+                    </div>
+                </div>
+            `;
+        });
+
+        // Load saved courses on page load
+        window.addEventListener('load', function() {
+            const savedCourses = localStorage.getItem('savedCourses');
+            if (savedCourses) {
+                const courses = JSON.parse(savedCourses);
+                courseCheckboxes.forEach(checkbox => {
+                    if (courses.includes(checkbox.value)) {
+                        checkbox.checked = true;
+                    }
+                });
+                updateRegistrationSummary();
+            }
+        });
+    </script>
+</body>
+</html>
