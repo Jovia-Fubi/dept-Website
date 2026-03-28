@@ -8,7 +8,6 @@ document.addEventListener('DOMContentLoaded', function() {
     initializeScrollEffects();
     initializeSlideshow();
     initializeThemeToggle();
-    initializeMobileMenu();
 });
 
 // Initialize all button interactions
@@ -745,98 +744,6 @@ return 'dark';
 return 'light';
 }
 
-// Mobile Menu Functionality
-function initializeMobileMenu() {
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    const mobileNav = document.getElementById('mobileNav');
-    const mobileNavClose = document.getElementById('mobileNavClose');
-    const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-    
-    if (!mobileMenuToggle || !mobileNav || !mobileNavClose || !mobileNavOverlay) {
-        console.log('Mobile menu elements not found');
-        return;
-    }
-    
-    // Open mobile menu
-    mobileMenuToggle.addEventListener('click', function(e) {
-        e.preventDefault();
-        openMobileMenu();
-    });
-    
-    // Close mobile menu
-    mobileNavClose.addEventListener('click', function(e) {
-        e.preventDefault();
-        closeMobileMenu();
-    });
-    
-    // Close mobile menu when clicking overlay
-    mobileNavOverlay.addEventListener('click', function(e) {
-        e.preventDefault();
-        closeMobileMenu();
-    });
-    
-    // Close mobile menu when clicking on links
-    const mobileNavLinks = mobileNav.querySelectorAll('a');
-    mobileNavLinks.forEach(link => {
-        link.addEventListener('click', function() {
-            closeMobileMenu();
-        });
-    });
-    
-    // Close mobile menu on escape key
-    document.addEventListener('keydown', function(e) {
-        if (e.key === 'Escape' && mobileNav.classList.contains('active')) {
-            closeMobileMenu();
-        }
-    });
-    
-    // Handle window resize
-    window.addEventListener('resize', function() {
-        if (window.innerWidth > 768 && mobileNav.classList.contains('active')) {
-            closeMobileMenu();
-        }
-    });
-}
-
-function openMobileMenu() {
-    const mobileNav = document.getElementById('mobileNav');
-    const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    
-    mobileNav.classList.add('active');
-    mobileNavOverlay.classList.add('active');
-    document.body.style.overflow = 'hidden';
-    
-    // Change hamburger to close icon
-    if (mobileMenuToggle) {
-        mobileMenuToggle.innerHTML = '<i class="fas fa-times"></i>';
-    }
-    
-    // Add haptic feedback
-    if (navigator.vibrate) {
-        navigator.vibrate(50);
-    }
-}
-
-function closeMobileMenu() {
-    const mobileNav = document.getElementById('mobileNav');
-    const mobileNavOverlay = document.getElementById('mobileNavOverlay');
-    const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-    
-    mobileNav.classList.remove('active');
-    mobileNavOverlay.classList.remove('active');
-    document.body.style.overflow = '';
-    
-    // Change close icon back to hamburger
-    if (mobileMenuToggle) {
-        mobileMenuToggle.innerHTML = '<i class="fas fa-bars"></i>';
-    }
-    
-    // Add haptic feedback
-    if (navigator.vibrate) {
-        navigator.vibrate(50);
-    }
-}
 
 // Make theme functions globally accessible
 window.ThemeUtils = {
